@@ -4,115 +4,120 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Daniel Aiman Hakimi — Software Developer</title>
-<meta name="description" content="Computer Science (Software Development) student at UTeM building web and mobile apps with Flutter, React Native and Firebase.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<meta name="description" content="Software developer building mobile and web apps with Flutter, React Native and Firebase.">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#eef2f6;--surface:#fff;--ink:#14213d;--muted:#52607a;--line:#d3dbe6;--needs:#14213d;--wants:#ff6b4a;--save:#12a88a;--on-ink:#fff;
+:root{--bg:#f3f6fb;--panel:#fff;--ink:#0b1220;--mut:#4d5b73;--line:#d5dce8;--acc:#0369a1;--ok:#15803d;--warn:#b45309;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1626;--surface:#18223a;--ink:#eaf0fa;--muted:#9fb0cc;--line:#2a3756;--needs:#7ea2ff;--wants:#ff7d5f;--save:#2fcfae;--on-ink:#0f1626}}
-:root[data-theme="dark"]{--bg:#0f1626;--surface:#18223a;--ink:#eaf0fa;--muted:#9fb0cc;--line:#2a3756;--needs:#7ea2ff;--wants:#ff7d5f;--save:#2fcfae;--on-ink:#0f1626}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a101c;--panel:#111a2b;--ink:#e6edf7;--mut:#93a3bd;--line:#223049;--acc:#38bdf8;--ok:#4ade80;--warn:#fbbf24}}
+:root[data-theme="dark"]{--bg:#0a101c;--panel:#111a2b;--ink:#e6edf7;--mut:#93a3bd;--line:#223049;--acc:#38bdf8;--ok:#4ade80;--warn:#fbbf24}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "DM Sans",system-ui,sans-serif}
-h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;line-height:1.1;margin:0}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:3px solid var(--wants);outline-offset:3px;border-radius:4px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Space Grotesk",system-ui,sans-serif}
+h1,h2,h3{margin:0;line-height:1.1}
+a{color:var(--acc)}
+:focus-visible{outline:3px solid var(--warn);outline-offset:3px;border-radius:4px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
 nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
-nav b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800}
-nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:15px}
-nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
-.hero{padding:72px 0 80px}
-.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
-.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;letter-spacing:-.03em}
-.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:34ch;margin:20px 0 28px}
-.avail{display:inline-flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:15px;margin-bottom:24px}
-.avail i{width:10px;height:10px;border-radius:50%;background:var(--save)}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--ink)}
-.btn.p{background:var(--ink);color:var(--on-ink)}
-.phone{width:min(260px,100%);margin:0 auto;background:var(--surface);border:8px solid var(--ink);border-radius:36px;padding:22px 18px;box-shadow:0 18px 0 -6px var(--line)}
-.phone small{color:var(--muted);font-size:13px}
-.phone .amt{font:800 2rem "Bricolage Grotesque",sans-serif;margin:2px 0 16px}
-.split{display:flex;height:22px;border-radius:8px;overflow:hidden;gap:3px}
-.split span{display:block;height:100%}
-.row{display:flex;justify-content:space-between;font-size:14px;padding:9px 0;border-bottom:1px solid var(--line)}
-.row:last-of-type{border:0}
-.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px}
-section{padding:72px 0;border-top:1px solid var(--line)}
-section h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:32px;letter-spacing:-.02em}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:12px}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:15px}
+nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--ink)}
+button{font:inherit;cursor:pointer;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 12px}
+button:hover{border-color:var(--acc)}
+.hero{padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);letter-spacing:-.03em;font-weight:700}
+.hero p{color:var(--mut);font-size:1.15rem;max-width:32ch;margin:18px 0 24px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.cta a{padding:10px 18px;border-radius:8px;border:1px solid var(--acc);text-decoration:none;font-weight:700}
+.cta a.p{background:var(--acc);color:var(--bg)}
+.term{background:#0a101c;color:#e6edf7;border:1px solid #223049;border-radius:12px;overflow:hidden;font-size:14px}
+.term .bar{display:flex;gap:7px;align-items:center;padding:10px 14px;background:#111a2b;border-bottom:1px solid #223049;color:#93a3bd}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#f87171}.term .bar i:nth-child(2){background:#fbbf24}.term .bar i:nth-child(3){background:#4ade80}
+.term .bar span{margin-left:8px}
+#out{height:300px;overflow:auto;padding:14px;white-space:pre-wrap;word-break:break-word}
+#out .c{color:#38bdf8}#out .k{color:#4ade80}
+.prompt{display:flex;gap:8px;padding:10px 14px;border-top:1px solid #223049}
+.prompt label{color:#4ade80}
+.prompt input{flex:1;min-width:0;background:none;border:0;color:inherit;font:inherit;outline:0}
+.prompt:focus-within{box-shadow:inset 0 0 0 2px #38bdf8}
+.quick{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 14px}
+.quick button{background:#111a2b;color:#e6edf7;border-color:#223049;font-size:13px;padding:3px 10px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);margin-bottom:28px}
+h2::before{content:"~/";color:var(--acc);font-family:"JetBrains Mono",monospace;margin-right:2px}
 .about{max-width:62ch;font-size:1.1rem}
-.proj{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;margin-bottom:20px}
-.proj.main{border:2px solid var(--ink)}
-.proj header{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
-.proj h3{font-size:1.4rem}
-.when{color:var(--muted);font-size:15px}
-.stack{color:var(--muted);font-size:15px;margin:0 0 12px}
-.proj ul{margin:0;padding-left:20px}.proj li{margin:6px 0;max-width:75ch}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filters button[aria-pressed="true"]{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.proj{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:24px;margin-bottom:16px}
+.proj[hidden]{display:none}
+.proj header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.proj h3{font-size:1.3rem}
+.when,.stack{color:var(--mut);font-size:14px}
+.stack{margin:6px 0 10px}
+.proj ul{margin:0;padding-left:20px}.proj li{margin:5px 0;max-width:75ch}
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.skills h3{font-size:1.1rem;margin-bottom:10px}
+.skills h3{font-size:1.05rem;margin-bottom:10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
-.chips li{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:15px}
+.chips li{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 10px;font-size:14px}
+.chips li:hover{border-color:var(--acc);color:var(--acc)}
 .edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.edu div{border-left:4px solid var(--ink);padding-left:16px}
-.edu h3{font-size:1.2rem}.edu p{margin:4px 0;color:var(--muted)}
-.lead-list{list-style:none;padding:0;margin:0;max-width:70ch}
-.lead-list li{padding:14px 0;border-bottom:1px solid var(--line)}
-.contact{font:800 clamp(1.4rem,4.2vw,2.6rem)/1.2 "Bricolage Grotesque",sans-serif;word-break:break-word}
-footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-@media(max-width:800px){.hero .wrap,.skills,.edu{grid-template-columns:1fr}nav ul{gap:14px;font-size:14px}nav b{display:none}.hero{padding-top:40px}}
+.edu div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
+.edu p{margin:4px 0;color:var(--mut)}
+.list{list-style:none;padding:0;margin:0;max-width:70ch}
+.list li{padding:12px 0;border-bottom:1px solid var(--line)}
+.mail{font-size:clamp(1.2rem,3.6vw,2rem);font-weight:700;word-break:break-word}
+footer{padding:28px 0;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:800px){.hero .wrap,.skills,.edu{grid-template-columns:1fr}nav ul{gap:12px;font-size:14px}.hero{padding-top:32px}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>Daniel Aiman</b>
-<ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+<nav><div class="wrap"><b class="mono">daniel@portfolio</b>
+<ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul>
+<button id="theme" type="button" aria-label="Toggle light and dark theme">Theme</button></div></nav>
 
 <header class="hero"><div class="wrap">
 <div>
-<div class="avail"><i></i>Seeking a 24-week internship · 28 Sep 2026 – 12 Mar 2027</div>
 <h1>Daniel Aiman Hakimi</h1>
-<p class="lead">Software developer who builds mobile and web apps people actually use.</p>
-<div class="btns"><a class="btn p" href="#projects">See my projects</a><a class="btn" href="https://github.com/Ky-mee" target="_blank" rel="noopener">GitHub</a><a class="btn" href="mailto:danielhakimi.zamani@gmail.com">Email me</a></div>
+<p>Software developer who builds mobile and web apps people actually use.</p>
+<div class="cta"><a class="p" href="#projects">See my projects</a><a href="https://github.com/Ky-mee" target="_blank" rel="noopener">GitHub</a><a href="mailto:danielhakimi.zamani@gmail.com">Email me</a></div>
 </div>
-<div class="phone" role="img" aria-label="Illustration of PocketPlan showing a budget split into 50 percent needs, 30 percent wants and 20 percent savings">
-<small>PocketPlan · This month</small>
-<div class="amt">50 / 30 / 20</div>
-<div class="split"><span style="width:50%;background:var(--needs)"></span><span style="width:30%;background:var(--wants)"></span><span style="width:20%;background:var(--save)"></span></div>
-<div style="margin-top:14px">
-<div class="row"><span><i class="dot" style="background:var(--needs)"></i>Needs</span><b>50%</b></div>
-<div class="row"><span><i class="dot" style="background:var(--wants)"></i>Wants</span><b>30%</b></div>
-<div class="row"><span><i class="dot" style="background:var(--save)"></i>Savings</span><b>20%</b></div>
-</div></div>
+<div class="term mono">
+<div class="bar"><i></i><i></i><i></i><span>Try the terminal</span></div>
+<div id="out" role="log" aria-live="polite"></div>
+<form class="prompt" id="f" autocomplete="off"><label for="cmd">$</label><input id="cmd" aria-label="Terminal command" placeholder="type a command, e.g. help"></form>
+<div class="quick" id="quick"></div>
+</div>
 </div></header>
 
 <section id="about"><div class="wrap">
 <h2>About</h2>
-<p class="about">I’m a Bachelor of Computer Science (Software Development) with Honours student at Universiti Teknikal Malaysia Melaka. I work across web and mobile development, from Flutter and React Native apps to Firebase and Supabase back ends, and I use visualization tools to make data easy to read. I’m fluent in Malay and English, and I’m looking for an internship where I can ship real features alongside a team.</p>
+<p class="about">I’m a Bachelor of Computer Science (Software Development) with Honours student at Universiti Teknikal Malaysia Melaka. I work across web and mobile development, from Flutter and React Native apps to Firebase and Supabase back ends, and I use visualization tools to make data easy to read. I’m fluent in Malay and English.</p>
 </div></section>
 
 <section id="projects"><div class="wrap">
 <h2>Projects</h2>
-<article class="proj main">
-<header><h3>PocketPlan</h3><span class="when">Mar 2026 – Jun 2026 · Final Year Project</span></header>
-<p class="stack">Flutter · Dart · Firebase · Google Gemini</p>
+<div class="filters" id="filters" role="group" aria-label="Filter projects by technology"></div>
+<article class="proj" data-tags="Flutter Firebase">
+<header><h3>PocketPlan</h3><span class="when mono">Mar 2026 – Jun 2026 · Final Year Project</span></header>
+<p class="stack mono">Flutter, Dart, Firebase, Google Gemini</p>
 <ul>
 <li>Designed and built a cross-platform Android and iOS app that helps university students manage money with the 50/30/20 budgeting rule.</li>
 <li>Added an AI financial advisor, powered by Google Gemini, that gives personalised advice from the user’s live budget and transactions.</li>
 <li>Built an analytics dashboard with interactive charts, category breakdowns and a moving-average model that forecasts future spending.</li>
 </ul></article>
-<article class="proj">
-<header><h3>Ipetro Visual Inspection Reporting System</h3><span class="when">Sep 2025 – Jan 2026 · Team of 5</span></header>
-<p class="stack">React Native · Python · Supabase</p>
+<article class="proj" data-tags="React Supabase">
+<header><h3>Ipetro Visual Inspection Reporting System</h3><span class="when mono">Sep 2025 – Jan 2026 · Team of 5</span></header>
+<p class="stack mono">React Native, Python, Supabase</p>
 <ul>
 <li>Co-developed a full-stack web app for pressure vessel inspections, covering 10+ assessment modules for oil and gas field reports.</li>
 <li>Cut manual documentation time by 50%.</li>
 <li>Built image annotation so inspectors can mark and label defects directly on vessel photos.</li>
 </ul></article>
-<article class="proj">
-<header><h3>Lost and Found UTeM</h3><span class="when">Oct 2025 – Jan 2026 · Team of 5</span></header>
-<p class="stack">React Native · Kotlin · Firebase · Android Studio</p>
+<article class="proj" data-tags="React Firebase">
+<header><h3>Lost and Found UTeM</h3><span class="when mono">Oct 2025 – Jan 2026 · Team of 5</span></header>
+<p class="stack mono">React Native, Kotlin, Firebase, Android Studio</p>
 <ul>
 <li>Built a campus-wide Android app with real-time item reports, keyword search and push notifications for UTeM’s 15,000+ students across 10+ buildings.</li>
 <li>Implemented role-based access with Firebase Authentication, secure registration and item-claim verification.</li>
@@ -130,13 +135,11 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var
 <section id="education"><div class="wrap">
 <h2>Education</h2>
 <div class="edu">
-<div><h3>Universiti Teknikal Malaysia Melaka</h3><p>Bachelor of Computer Science (Software Development) with Honours</p><p>Oct 2023 – present · CGPA 3.25</p></div>
-<div><h3>Malacca Matriculation College</h3><p>Physical Science</p><p>Jul 2021 – May 2023 · CGPA 3.00</p></div>
-</div></div></section>
-
-<section id="leadership"><div class="wrap">
-<h2>Leadership</h2>
-<ul class="lead-list">
+<div><h3>Universiti Teknikal Malaysia Melaka</h3><p>Bachelor of Computer Science (Software Development) with Honours</p><p class="mono">Oct 2023 – present · CGPA 3.25</p></div>
+<div><h3>Malacca Matriculation College</h3><p>Physical Science</p><p class="mono">Jul 2021 – May 2023 · CGPA 3.00</p></div>
+</div>
+<h3 style="margin:36px 0 8px">Leadership</h3>
+<ul class="list">
 <li>Vice Multimedia 1, Exco Multimedia, Gabungan Pelajar Melayu Semenanjung (GPMS)</li>
 <li>Secretary of Technical and Logistics, D’FTMK Tech Day 2024</li>
 <li>Secretary of Technical and Multimedia, School Attack programme with GPMS</li>
@@ -144,10 +147,38 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var
 
 <section id="contact"><div class="wrap">
 <h2>Contact</h2>
-<p>Open to internship offers. Based in Batu Caves, Selangor.</p>
-<p class="contact"><a href="mailto:danielhakimi.zamani@gmail.com">danielhakimi.zamani@gmail.com</a></p>
+<p>Based in Batu Caves, Selangor.</p>
+<p class="mail"><a href="mailto:danielhakimi.zamani@gmail.com">danielhakimi.zamani@gmail.com</a></p>
 <p><a href="https://github.com/Ky-mee" target="_blank" rel="noopener">github.com/Ky-mee</a></p>
 </div></section>
 <footer><div class="wrap">© 2026 Daniel Aiman Hakimi bin Mohd Zamani</div></footer>
+
+<script>
+(function(){
+var root=document.documentElement,out=document.getElementById("out"),inp=document.getElementById("cmd");
+function dark(){return root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches}
+document.getElementById("theme").onclick=function(){root.dataset.theme=dark()?"light":"dark"};
+var C={
+help:["Commands: whoami, skills, projects, education, contact, clear","Click a button below or type a command."],
+whoami:["Daniel Aiman Hakimi bin Mohd Zamani","Software developer, Batu Caves, Selangor","Computer Science (Software Development), UTeM","Languages spoken: Malay, English"],
+skills:["Languages : HTML CSS JavaScript PHP Java C++ Python Kotlin Dart SQL PostgreSQL","Frameworks: React, React Native, Next.js, Flutter, Git","Tools     : VS Code, Android Studio, XAMPP, phpMyAdmin, Firebase, Supabase, GitHub"],
+projects:["1. PocketPlan: Flutter finance tracker with a Gemini AI advisor","2. Ipetro: vessel inspection reporting, cut documentation time by 50%","3. Lost and Found UTeM: Android app for 15,000+ students"],
+education:["UTeM: BCS (Software Development) with Honours, CGPA 3.25","Malacca Matriculation College: Physical Science, CGPA 3.00"],
+contact:["Email : danielhakimi.zamani@gmail.com","GitHub: github.com/Ky-mee"]};
+function line(t,cls){var d=document.createElement("div");if(cls)d.className=cls;d.textContent=t;out.appendChild(d)}
+function run(raw){var c=raw.trim().toLowerCase();if(!c)return;
+if(c==="clear"){out.textContent="";return}
+line("$ "+raw.trim(),"c");
+if(C[c])C[c].forEach(function(t){line(t)});else line("command not found: "+c+". Type help.","k");
+out.scrollTop=out.scrollHeight}
+document.getElementById("f").onsubmit=function(e){e.preventDefault();run(inp.value);inp.value=""};
+var q=document.getElementById("quick");
+["help","whoami","skills","projects","contact","clear"].forEach(function(n){var b=document.createElement("button");b.type="button";b.textContent=n;b.onclick=function(){run(n)};q.appendChild(b)});
+run("whoami");run("help");
+var ps=[].slice.call(document.querySelectorAll(".proj")),fl=document.getElementById("filters");
+["All","Flutter","React","Firebase","Supabase"].forEach(function(t){var b=document.createElement("button");b.type="button";b.textContent=t;b.setAttribute("aria-pressed",t==="All");
+b.onclick=function(){[].forEach.call(fl.children,function(x){x.setAttribute("aria-pressed",x===b)});ps.forEach(function(p){p.hidden=!(t==="All"||p.dataset.tags.split(" ").indexOf(t)>-1)})};fl.appendChild(b)});
+})();
+</script>
 </body>
 </html>
