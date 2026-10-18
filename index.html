@@ -69,6 +69,25 @@ h2::before{content:"~/";color:var(--acc);font-family:"JetBrains Mono",monospace;
 .list li{padding:12px 0;border-bottom:1px solid var(--line)}
 .mail{font-size:clamp(1.2rem,3.6vw,2rem);font-weight:700;word-break:break-word}
 footer{padding:28px 0;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes ln{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+.hero .wrap>div:first-child>*{opacity:0;animation:in .7s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .wrap>div:first-child>:nth-child(1){animation-delay:.1s}
+.hero .wrap>div:first-child>:nth-child(2){animation-delay:.25s}
+.hero .wrap>div:first-child>:nth-child(3){animation-delay:.4s}
+.term{animation:in .8s .35s cubic-bezier(.2,.7,.2,1) both}
+#out div{animation:ln .3s both}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .rv.on{opacity:1;transform:none}
+.js .chips li{opacity:0;transform:scale(.8);transition:opacity .4s,transform .4s cubic-bezier(.3,1.5,.5,1);transition-delay:calc(var(--i,0)*45ms)}
+.js .chips.on li{opacity:1;transform:none}
+.cur,.cur *{cursor:none!important}
+.cur input{cursor:text!important}
+#dot,#ring{position:fixed;top:0;left:0;pointer-events:none;z-index:99;border-radius:50%;opacity:0}
+#dot{width:8px;height:8px;background:var(--acc);margin:-4px 0 0 -4px}
+#ring{width:34px;height:34px;border:2px solid var(--acc);margin:-17px 0 0 -17px;transition:width .2s,height .2s,margin .2s,background .2s}
+#ring.big{width:56px;height:56px;margin:-28px 0 0 -28px;background:color-mix(in srgb,var(--acc) 18%,transparent)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero .wrap>div:first-child>*,.term{opacity:1}}
 @media(max-width:800px){.hero .wrap,.skills,.edu{grid-template-columns:1fr}nav ul{gap:12px;font-size:14px}.hero{padding-top:32px}}
 </style>
 </head>
@@ -165,8 +184,8 @@ skills:["Languages : HTML CSS JavaScript PHP Java C++ Python Kotlin Dart SQL Pos
 projects:["1. PocketPlan: Flutter finance tracker with a Gemini AI advisor","2. Ipetro: vessel inspection reporting, cut documentation time by 50%","3. Lost and Found UTeM: Android app for 15,000+ students"],
 education:["UTeM: BCS (Software Development) with Honours, CGPA 3.25","Malacca Matriculation College: Physical Science, CGPA 3.00"],
 contact:["Email : danielhakimi.zamani@gmail.com","GitHub: github.com/Ky-mee"]};
-function line(t,cls){var d=document.createElement("div");if(cls)d.className=cls;d.textContent=t;out.appendChild(d)}
-function run(raw){var c=raw.trim().toLowerCase();if(!c)return;
+var seq=0;function line(t,cls){var d=document.createElement("div");if(cls)d.className=cls;d.textContent=t;d.style.animationDelay=(seq++*70)+"ms";out.appendChild(d)}
+function run(raw){var c=raw.trim().toLowerCase();if(!c)return;seq=0;
 if(c==="clear"){out.textContent="";return}
 line("$ "+raw.trim(),"c");
 if(C[c])C[c].forEach(function(t){line(t)});else line("command not found: "+c+". Type help.","k");
@@ -174,10 +193,24 @@ out.scrollTop=out.scrollHeight}
 document.getElementById("f").onsubmit=function(e){e.preventDefault();run(inp.value);inp.value=""};
 var q=document.getElementById("quick");
 ["help","whoami","skills","projects","contact","clear"].forEach(function(n){var b=document.createElement("button");b.type="button";b.textContent=n;b.onclick=function(){run(n)};q.appendChild(b)});
-run("whoami");run("help");
+setTimeout(function(){run("whoami")},700);setTimeout(function(){run("help")},1900);
 var ps=[].slice.call(document.querySelectorAll(".proj")),fl=document.getElementById("filters");
 ["All","Flutter","React","Firebase","Supabase"].forEach(function(t){var b=document.createElement("button");b.type="button";b.textContent=t;b.setAttribute("aria-pressed",t==="All");
 b.onclick=function(){[].forEach.call(fl.children,function(x){x.setAttribute("aria-pressed",x===b)});ps.forEach(function(p){p.hidden=!(t==="All"||p.dataset.tags.split(" ").indexOf(t)>-1)})};fl.appendChild(b)});
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){root.classList.add("js");
+var els=[].slice.call(document.querySelectorAll("section h2,.about,.proj,.chips,.edu div,.list li,.mail"));
+els.forEach(function(e){e.classList.add("rv")});
+[].forEach.call(document.querySelectorAll(".chips li"),function(l,i){l.style.setProperty("--i",i%12)});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.15});
+els.forEach(function(e){io.observe(e)});
+if(matchMedia("(hover:hover) and (pointer:fine)").matches){root.classList.add("cur");
+var dot=document.createElement("div"),ring=document.createElement("div");dot.id="dot";ring.id="ring";document.body.appendChild(dot);document.body.appendChild(ring);
+var mx=0,my=0,rx=0,ry=0,seen=false;
+addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY;if(!seen){seen=true;rx=mx;ry=my;dot.style.opacity=1;ring.style.opacity=1}
+dot.style.transform="translate("+mx+"px,"+my+"px)";
+ring.classList.toggle("big",!!(e.target.closest&&e.target.closest("a,button,input,.chips li")))});
+(function f(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform="translate("+rx+"px,"+ry+"px)";requestAnimationFrame(f)})();
+}}
 })();
 </script>
 </body>
